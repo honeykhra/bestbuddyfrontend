@@ -10,6 +10,7 @@ import Parking from "../../assets/amenties/Parking.svg";
 import Refrigerator from "../../assets/amenties/Refrigerator.svg";
 import TV from "../../assets/amenties/TV.svg";
 import Wifi from "../../assets/amenties/Wifi.svg";
+import Dryer from "../../assets/amenties/Dryer.svg";
 import "./Amenties.scss";
 
 const data = [
@@ -47,6 +48,7 @@ const data = [
   },
   { id: 9, title: "TV", src: TV, alt: "TV", selected: false },
   { id: 10, title: "WiFi", src: Wifi, alt: "Wifi", selected: false },
+  { id: 11, title: "Dryer", src: Dryer, alt: "Dryer", selected: false },
 ];
 
 const Amenties = ({
