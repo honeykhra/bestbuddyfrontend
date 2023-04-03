@@ -1,35 +1,3 @@
-.detailspage {
-  .detail-banner-img {
-    display: flex;
-    height: 450px;
-    grid-column-gap: 25px;
-
-    img {
-      border-radius: 10px;
-      width: 100%;
-    }
-
-    .banner-left {
-      flex-grow: 1;
-
-      img {
-        height: 100%;
-      }
-    }
-
-    .banner-right {
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      grid-row-gap: 25px;
-
-      img {
-        height: 47%;
-      }
-    }
-  }
-}
-
 .owner-details-container {
   background: #d9d9d9;
   border-radius: 10px;
@@ -324,7 +292,6 @@
   }
 
   .property-details-more-container {
-
     .header {
       color: var(--darkblue);
       font-weight: 400;

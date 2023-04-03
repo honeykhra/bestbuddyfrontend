@@ -1,7 +1,5 @@
 import React from "react";
-
 import "./Card.scss";
-// import image1 from "../../assets/images/kara-eads-L7EwHkq1B2s-unsplash.jpg";
 
 const Card = ({ property }) => {
   return (

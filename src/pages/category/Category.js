@@ -17,16 +17,16 @@ const Category = () => {
     dispatch(fetchPropertiesByCategory(categoryname));
   }, []);
 
-  const properties = useSelector((state) => state.property.propertiesBycategory);
+  const properties = useSelector(
+    (state) => state.property.propertiesBycategory
+  );
 
   return (
     <>
       <Navbar />
-      <Breadcrumbs title={categoryname} />
-      <div className="container category-list">
-        {properties.map((item) => (
-          <SliderCard property={item} />
-        ))}
+      <div className="categorypage">
+        <h2>Category/{categoryname}</h2>
+        <Slider properties={properties} />
       </div>
       <Footer />
     </>
