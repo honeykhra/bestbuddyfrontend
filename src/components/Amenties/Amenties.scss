@@ -1,0 +1,64 @@
+.amenties .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1.5rem;
+  padding: 25px 0;
+}
+
+.amenties .grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+//to fix later
+.amenties .grid img:hover {
+  filter: invert(90%);
+}
+
+.selectable {
+  position: relative;
+  cursor: pointer;
+}
+
+.selectss {
+  filter: invert(90%);
+}
+
+.selected-icon {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  font-size: 2rem;
+  color: #283e69 !important;
+}
+
+.amenties .grid .active {
+  filter: invert(90%);
+}
+
+// Large devices (desktops)
+@media (max-width: 992px) {
+  .amenties .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 1rem;
+  }
+}
+
+// Medium devices (tablets)
+@media (max-width: 768px) {
+  .amenties .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 1rem;
+  }
+}
+
+// Small devices
+@media (max-width: 576px) {
+  .amenties .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}

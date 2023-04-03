@@ -1,0 +1,91 @@
+.signin-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .banner-container {
+    height: 100vh;
+
+    .logo {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      left: 15%;
+      width: 15%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .header-container,
+  .footer-container {
+    display: none;
+  }
+
+  .form-container {
+    height: 100vh;
+  }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (max-width: 1400px) {}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {}
+
+// Large devices (desktops)
+@media (max-width: 992px) {}
+
+// Medium devices (tablets)
+@media (max-width: 768px) {}
+
+// Small devices
+@media (max-width: 576px) {
+  .signin-page {
+    width: 90%;
+    display: grid;
+    grid-template-columns: auto;
+
+    .banner-container {
+      display: none;
+    }
+
+    .header-container {
+      display: block;
+
+      .logomobile {
+        position: absolute;
+        top: 2rem;
+        right: 1.5rem;
+        font-size: 2rem;
+        font-weight: 500;
+        color: var(--lightblue);
+
+        span {
+          color: var(--darkblue);
+        }
+      }
+
+      .mobile-banner-container {
+        margin-top: 25px;
+        text-align: center;
+      }
+    }
+
+    .form-container {
+      height: auto;
+    }
+
+    .footer-container {
+      display: block;
+      // position: absolute;
+      // bottom: -10rem;
+
+      .bottommountains {
+        width: 100vw;
+      }
+    }
+  }
+}

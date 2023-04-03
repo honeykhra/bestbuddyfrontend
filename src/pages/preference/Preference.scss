@@ -1,0 +1,20 @@
+.preferences-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preferences-heading {
+  text-align: center;
+}
+
+.submitbutton {
+  background: var(--darkblue);
+  color: #fff;
+  width: 25vw;
+  height: 3rem;
+}
+
+.submitbutton:hover {
+  background: var(--lightblue);
+}

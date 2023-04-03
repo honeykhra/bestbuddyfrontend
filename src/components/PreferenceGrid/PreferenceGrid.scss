@@ -1,0 +1,60 @@
+.Preferencegrid .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1.5rem;
+  padding: 25px 0;
+}
+
+.Preferencegrid .grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+//To fix later
+.Preferencegrid .grid img:hover {
+  filter: invert(90%);
+}
+
+.Preferencegrid .grid .selectable {
+  position: relative;
+  cursor: pointer;
+}
+
+.selects {
+  filter: invert(90%);
+}
+
+.selected-icon {
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  font-size: 2rem;
+  color: #283e69 !important;
+}
+
+// Large devices (desktops)
+@media (max-width: 992px) {
+  .Preferencegrid .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 1rem;
+  }
+}
+
+// Medium devices (tablets)
+@media (max-width: 768px) {
+  .Preferencegrid .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 1rem;
+  }
+}
+
+// Small devices
+@media (max-width: 576px) {
+  .Preferencegrid .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+}
