@@ -110,6 +110,8 @@
 // X-Large devices (large desktops, 1200px and up)
 @media (max-width: 1200px) {
   .add-room {
+    margin: 2rem 4rem;
+
     .addHeading {
       font-size: 28px;
     }
@@ -124,6 +126,8 @@
 // Large devices (desktops)
 @media (max-width: 992px) {
   .add-room {
+    margin: 2rem 0rem;
+
     .submitbutton {
       background: var(--darkblue);
       color: #fff;
@@ -149,6 +153,14 @@
     .inputs-grps-top {
       flex-direction: column;
       margin-top: 2rem;
+      width: 60vw;
+      text-align: center;
+
+      input,select,option{
+        color: var(--darkblue);
+        font-weight: 600;
+        text-align: center;
+      }
     }
 
     .input-grp {
@@ -207,6 +219,13 @@
     .addHeading2 {
       font-size: 14px;
       line-height: 18px;
+    }
+    
+    .inputs-grps-top {
+      flex-direction: column;
+      margin-top: 1rem;
+      width: 85vw;
+      text-align: center;
     }
 
     .input-grp h5 {

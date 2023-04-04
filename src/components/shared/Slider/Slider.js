@@ -14,7 +14,7 @@ const SlickSlider = ({ properties, title }) => {
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
-    initialSlide: 0,
+    initialSlide: 1,
     responsive: [
       {
         breakpoint: 992,
@@ -23,7 +23,7 @@ const SlickSlider = ({ properties, title }) => {
           slidesToScroll: 2,
           infinite: true,
           dots: true,
-          initialSlide: 0,
+          initialSlide: 1,
         },
       },
       {
