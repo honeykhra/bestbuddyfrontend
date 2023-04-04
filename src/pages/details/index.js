@@ -10,7 +10,6 @@ import Footer from "../../components/Footer/Footer";
 import NavBar from "../../components/Navbar/Navbar";
 import { fetchPropertyById } from "../../store/slice/property/propertySlice";
 import Amenties from "../../components/Amenties/Amenties";
-import BreadCrumb from '../../components/BreadCrumbs/Breadcrumbs';
 
 const PropertyDetails = () => {
   const dispatch = useDispatch();
@@ -23,14 +22,16 @@ const PropertyDetails = () => {
     }
   }, [id]);
 
-  const details = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minima consequatur reprehenderit nesciunt quisquam maiores placeat velit laboriosam? Amet molestiae esse consequatur nobis ipsum pariatur vel earum voluptates alias ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minima consequatur reprehenderit nesciunt quisquam maiores placeat velit laboriosam? Amet molestiae esse consequatur nobis ipsum pariatur vel earum voluptates alias ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minima consequatur reprehenderit nesciunt quisquam maiores placeat velit laboriosam? Amet molestiae esse consequatur nobis ipsum pariatur vel earum voluptates alias ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minima consequatur reprehenderit nesciunt quisquam maiores placeat velit laboriosam? Amet molestiae esse consequatur nobis ipsum pariatur vel earum voluptates alias ipsa.'
+  const details =
+    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minima consequatur reprehenderit nesciunt quisquam maiores placeat velit laboriosam? Amet molestiae esse consequatur nobis ipsum pariatur vel earum voluptates alias ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minima consequatur reprehenderit nesciunt quisquam maiores placeat velit laboriosam? Amet molestiae esse consequatur nobis ipsum pariatur vel earum voluptates alias ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minima consequatur reprehenderit nesciunt quisquam maiores placeat velit laboriosam? Amet molestiae esse consequatur nobis ipsum pariatur vel earum voluptates alias ipsa.Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe minima consequatur reprehenderit nesciunt quisquam maiores placeat velit laboriosam? Amet molestiae esse consequatur nobis ipsum pariatur vel earum voluptates alias ipsa.";
   return (
     <>
       <NavBar />
-      <BreadCrumb />
+
       {Object?.keys(propertyDetails)?.length > 0 && (
         <div className="detailspage container">
           <div className="property-details-topbar-container">
+            <h2>Category /  {propertyDetails?.category} / Details</h2>
             <div className="property-location">
               <h1>{propertyDetails?.name}</h1>
               <p className="location-p">

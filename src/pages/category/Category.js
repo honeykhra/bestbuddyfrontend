@@ -4,7 +4,6 @@ import "./Category.scss";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
 import Slider from "../../components/shared/Slider/Slider";
-import Breadcrumbs from "../../components/BreadCrumbs/Breadcrumbs";
 import { fetchPropertiesByCategory } from "../../store/slice/property/propertySlice";
 import { useDispatch, useSelector } from "react-redux";
 import SliderCard from "../../components/Card/SliderCard";
@@ -25,7 +24,7 @@ const Category = () => {
     <>
       <Navbar />
       <div className="categorypage">
-        <h2>Category/{categoryname}</h2>
+        <h2>Category / {categoryname}</h2>
         <Slider properties={properties} />
       </div>
       <Footer />
