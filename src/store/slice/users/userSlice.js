@@ -5,6 +5,7 @@ import {
   USER_SIGNOUT,
   USER_SIGNUP,
   USER_DETAILS,
+  EDIT_USER_DETAILS,
 } from "./service";
 import bestBuddyAxios from "./../../../bestbuddyaxios/bestBuddyAxios";
 
@@ -50,12 +51,11 @@ export const signOut = createAsyncThunk("user/signout", async (data) => {
   }
 });
 
-export const userInfo = createAsyncThunk("user/userInfo ", async (email) => {
+export const userInfo = createAsyncThunk("user/userInfo ", async () => {
   try {
     const response = await bestBuddyAxios({
-      method: "POST",
+      method: "GET",
       url: USER_DETAILS,
-      data: { email: email },
     });
 
     return response;
@@ -64,12 +64,29 @@ export const userInfo = createAsyncThunk("user/userInfo ", async (email) => {
   }
 });
 
+export const editUserDetails = createAsyncThunk(
+  "user/editUserDetails",
+  async (data) => {
+    try {
+      const response = await bestBuddyAxios({
+        method: "PATCH",
+        url: `${EDIT_USER_DETAILS}/${data.id}`,
+        data: data.data,
+      });
+
+      return response;
+    } catch (err) {
+      throw err.response.data;
+    }
+  }
+);
+
 const initialState = {
   userInfo: [],
-  token: "",
+  token: localStorage.getItem("access-token") || "",
   message: "",
   status: false,
-  isAuthenticated: false,
+  isAuthenticated: localStorage.getItem("access-token") ? true : false,
   isLoading: false,
 };
 
@@ -152,6 +169,16 @@ const userSlice = createSlice({
       return { ...state, userInfo: payload.data.data, isLoading: false };
     },
     [userInfo.rejected]: (state, { error }) => {
+      return { ...state, message: error.message, isLoading: false };
+    },
+
+    [editUserDetails.pending]: (state) => {
+      return { ...state, isLoading: true };
+    },
+    [editUserDetails.fulfilled]: (state, { payload }) => {
+      return { ...state, message: "User info Updated", isLoading: false };
+    },
+    [editUserDetails.rejected]: (state, { error }) => {
       return { ...state, message: error.message, isLoading: false };
     },
   },

@@ -5,25 +5,24 @@ import "slick-carousel/slick/slick-theme.css";
 
 import SliderCard from "../../Card/SliderCard";
 import "./Slider.scss";
-import { Link } from "react-router-dom";
 
-const SlickSlider = ({ properties, title }) => {
+const SlickSlider = ({ properties, title = "" }) => {
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 4.1,
     slidesToScroll: 4,
-    initialSlide: 1,
+    initialSlide: 0,
     responsive: [
       {
         breakpoint: 992,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          infinite: true,
-          dots: true,
-          initialSlide: 1,
+          dots: false,
+          infinite: false,
+          initialSlide: 0,
         },
       },
       {
@@ -32,6 +31,8 @@ const SlickSlider = ({ properties, title }) => {
           slidesToShow: 1,
           slidesToScroll: 1,
           initialSlide: 1,
+          dots: false,
+          infinite: false,
         },
       },
     ],
@@ -39,23 +40,16 @@ const SlickSlider = ({ properties, title }) => {
 
   return (
     <section className="slider-container">
-      <Link to="/category">
-        <p className="slider-title">{title}</p>
-      </Link>
+      <p className="slider-title">{title}</p>
       <Slider {...settings}>
         {properties?.map((property) => (
-          <Link to={`/details/${property?._id}`} key={property?._id}>
-            <div>
-              <h3>
-                <SliderCard property={property} />
-              </h3>
-            </div>
-          </Link>
+          <div>
+            <h3>
+              <SliderCard property={property} />
+            </h3>
+          </div>
         ))}
       </Slider>
-      <Link to={`/category/${title}`}>
-        <p className="show-more">show more</p>
-      </Link>
     </section>
   );
 };

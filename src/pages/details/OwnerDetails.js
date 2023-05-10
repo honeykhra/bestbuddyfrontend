@@ -8,28 +8,26 @@ const OwnerDetails = ({ preferences = [], ownerData = {} }) => {
     <>
       <div className="owner-details-container">
         {/* Owner image avtar, name and location*/}
-        <Row className="owner-profile">
-          <Col sm={12} lg={3}>
+        <Row>
+          <Col xs={3}>
             <Image className="avatar" src={avtar} alt="profile-pic" />
           </Col>
-          <Col sm={12} lg={9} s className="">
-            <p className="property-details-owner-name">
-              {ownerData?.user_name}
-            </p>
-            <p className="property-owner-details">
-              34 / {ownerData?.gender}
-            </p>
-            <p className="property-owner-details">
-              <Image src={locationIcon} alt={"location"} />
-              <span className="property-owner-location ">
-                {ownerData?.city}, India
-              </span>
+          <Col className="ml-5 col2">
+            <p className="owner-name">{ownerData?.user_name}</p>
+            <p className="owner-details">34 / {ownerData?.gender}</p>
+            <p className="owner-details">
+              <img
+                className="owner-location-icon"
+                src={locationIcon}
+                alt="location"
+              />
+              <span>{ownerData?.city}, India</span>
             </p>
           </Col>
         </Row>
         {/* Owner Personal Views*/}
-        <Row className="owner-details-text-row my-4">
-          <p className="owner-details-text">
+        <Row className="owner-details-text-row">
+          <p>
             Emmelie is a traditional book-worm and has always been from a young
             age. She is a housekeeper mom with two kids and she has a lot of
             time to read and relax. Emmelie tends to casually browse books in a
@@ -39,24 +37,24 @@ const OwnerDetails = ({ preferences = [], ownerData = {} }) => {
         </Row>
         {/* Owner conatct options */}
         <Row className="owner-details-text-row">
-          <Col sm={6} md={4} lg={3} className="owner-details-contact-col mr-3">
+          <div className="owner-details-contact-col">
             <IoChatboxSharp style={{ color: "white" }} size={22} />
             <span className="ml-3">Chat</span>
-          </Col>
-          <Col sm={6} md={4} lg={3} className="owner-details-contact-col">
+          </div>
+          <div className="owner-details-contact-col">
             <a href={`tel:${ownerData?.phone}`}>
               <IoCallSharp style={{ color: "white" }} size={22} />
               <span className="ml-3" style={{ color: "white" }}>
                 Call
               </span>
             </a>
-          </Col>
+          </div>
         </Row>
         {/* Preferences of owner */}
-        <Row className="owner-habits-row mt-4">
+        <Row className="owner-habits-row">
           <h2 className="head">Preferences</h2>
           {preferences?.map((item, index) => (
-            <Col xs={5} sm={5} md={3} lg={2} className="owner-habits-container" key={`${index}-${item}`}>
+            <Col className="owner-habits-container" key={`${index}-${item}`}>
               {item}
             </Col>
           ))}

@@ -3,13 +3,14 @@ import { useRoutes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "bootstrap/dist/css/bootstrap.min.css";
 import jwt_decode from "jwt-decode";
+import 'react-loading-skeleton/dist/skeleton.css'
 
 import Routers from "./Routers";
 import "./App.scss";
-import { setAuthenticated } from "./store/slice/users/userSlice";
+import { setAuthenticated, userInfo } from "./store/slice/users/userSlice";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Loader from "./components/Loader/Loader";
+
 
 function App() {
   const isAuthenticated = useSelector((state) => state.user.isAuthenticated);
@@ -35,13 +36,15 @@ function App() {
 
   useEffect(() => {
     checkAuthentication();
+    if(isAuthenticated) {
+      dispatch(userInfo());
+    }
   }, [isAuthenticated]);
 
   return (
     <div className="App">
       {useRoutes(Routers(isAuthenticated))}
       <ToastContainer />
-      <Loader isLoading={isLoading} />
     </div>
   );
 }

@@ -42,3 +42,11 @@ export const getFormValues = (formElements) => {
   }
 };
 
+export const emptyData = [
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0],
+  [0, 0, 0, 0, 0, 0]
+]
+
+

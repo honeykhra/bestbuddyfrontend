@@ -11,7 +11,7 @@ import Profile from "./pages/profile/Profile";
 import Preference from "./pages/preference/Preference";
 import Setting from "./pages/settings/Setting";
 import NotFound from "./pages/404/NotFound";
-import List from "./pages/list/List";
+import MyListings from "./pages/mylistings/MyListings";
 
 const Routers = (isLoggedIn) => [
   {
@@ -39,12 +39,12 @@ const Routers = (isLoggedIn) => [
     element: isLoggedIn ? <AddRoom /> : <Navigate to="/signin" />,
   },
   {
-    path: "/profile",
+    path: "/profile/:mode",
     element: isLoggedIn ? <Profile /> : <Navigate to="/signin" />,
   },
   {
-    path: "/favorite",
-    element: isLoggedIn ? <List /> : <Navigate to="/signin" />,
+    path: "/mylistings",
+    element: isLoggedIn ? <MyListings /> : <Navigate to="/signin" />,
   },
   {
     path: "/preference",

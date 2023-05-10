@@ -51,11 +51,7 @@ const data = [
   { id: 11, title: "Dryer", src: Dryer, alt: "Dryer", selected: false },
 ];
 
-const Amenties = ({
-  selectable = false,
-  setAmenties = () => {},
-  dataAmenties = [],
-}) => {
+const Amenties = ({ selectable = false, setAmenties = () => {} }) => {
   const [renderData, setRenderData] = useState([...data]);
 
   useEffect(() => {
@@ -81,7 +77,6 @@ const Amenties = ({
       <div className="grid">
         {renderData?.map((item) => (
           <div
-            id="amenties-card"
             className={selectable && "selectable"}
             key={item?.id}
             onClick={() => selectable && handleSelectAmenties(item)}
@@ -89,28 +84,12 @@ const Amenties = ({
             {/* {selectable && item?.selected && (
               <AiOutlineCheckSquare className="selected-icon" />
             )} */}
-
-            {dataAmenties.length > 0 ? (
-              dataAmenties.map((amenity) =>
-                amenity === item.title ? (
-                  <img
-                    className="selectss"
-                    src={item.src}
-                    alt={item.alt}
-                    key={item.src}
-                  />
-                ) : (
-                  ""
-                )
-              )
-            ) : (
-              <img
-                className={selectable && item?.selected ? "selectss" : ""}
-                src={item.src}
-                alt={item.alt}
-                key={item.src}
-              />
-            )}
+            <img
+              className={selectable && item?.selected ? "selectss" : ""}
+              src={item.src}
+              alt={item.alt}
+              key={item.src}
+            />
           </div>
         ))}
       </div>

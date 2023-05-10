@@ -10,6 +10,7 @@ import "./Navbar.scss";
 import Hamburger from "./Hamburger";
 import { Link } from "react-router-dom";
 import { signOut } from "../../store/slice/users/userSlice";
+import TopCircles from "./../../assets/Top-Circles.svg";
 
 const NavBar = () => {
   const { isAuthenticated } = useSelector((state) => state.user);
@@ -24,6 +25,10 @@ const NavBar = () => {
   return (
     <Navbar key="lg" bg="white" expand="lg" className="mb-3 navbar">
       <Container className="container">
+        {/* mobile headers */}
+        <img className="topcircles1" src={TopCircles} alt="TopCircles" />
+        {/* mobile headers */}
+
         <Navbar.Brand>
           <Logo />
         </Navbar.Brand>
@@ -44,11 +49,11 @@ const NavBar = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           {isAuthenticated ? (
-            <Offcanvas.Body>
+            <Offcanvas.Body className="offcanvas-body">
               <Nav className="justify-content-end flex-grow-1">
                 <Link to="/">Home</Link>
                 <Link to="/addroom">Upload Room</Link>
-                <Link to="/favorite">Favorite</Link>
+                <Link to="/mylistings">My Listings</Link>
                 <NavDropdown
                   title="Profile"
                   id="offcanvasNavbarDropdown-expand-lg"
@@ -58,7 +63,7 @@ const NavBar = () => {
                     Hi {username}! {isAuthenticated}
                   </h5>
                   <NavDropdown.Item>
-                    <Link to="/profile">My profile</Link>
+                    <Link to="/profile/view">My profile</Link>
                   </NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item>
